@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:math_expressions/math_expressions.dart';
 
 class Calculator extends StatefulWidget {
@@ -164,6 +163,9 @@ class _CalculatorState extends State<Calculator> {
                       onTaped: () {
                         setState(() {
                           if (data == "0" && data.length <= 1) {
+                            data = "";
+                          }
+                          if(data=="Math Error" || data == "Infinity"){
                             data = "";
                           }
                           data += e;
